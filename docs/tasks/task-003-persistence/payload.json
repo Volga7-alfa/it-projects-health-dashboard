@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-30T12:00:00.000Z",
+  "source": {
+    "type": "excel",
+    "fileName": "portfolio_2026_10.xlsx",
+    "importedAt": "2026-10-30T11:55:00.000Z"
+  },
+  "filters": {
+    "direction": "all",
+    "project": "all"
+  },
+  "healthRules": {
+    "overdueMonthsRed": 1,
+    "budgetOverrunPercentRed": 0,
+    "monthsToCloseYellow": 3
+  },
+  "projects": [
+    {
+      "direction": "А",
+      "leader": "иванов",
+      "project": "А1",
+      "status": "открыт",
+      "openDate": "2025-01-01",
+      "planClose": "2026-12-31",
+      "factClose": null,
+      "planBudget": 1000000,
+      "factBudget": 500000,
+      "goals": [
+        { "name": "цель 1", "planDate": "2025-12-31", "status": "выполнено" },
+        { "name": "цель 2", "planDate": "2026-03-31", "status": "выполнено" },
+        { "name": "цель 3", "planDate": "2026-12-31", "status": "в работе" }
+      ]
+    },
+    {
+      "direction": "А",
+      "leader": "иванов",
+      "project": "А4",
+      "status": "открыт",
+      "openDate": "2025-01-01",
+      "planClose": "2026-12-31",
+      "factClose": null,
+      "planBudget": 1000000,
+      "factBudget": 1200000,
+      "goals": [
+        { "name": "цель 8", "planDate": "2026-12-31", "status": "в работе" },
+        { "name": "цель 9", "planDate": "2026-12-31", "status": "в работе" }
+      ]
+    },
+    {
+      "direction": "Б",
+      "leader": "петров",
+      "project": "Б2",
+      "status": "открыт",
+      "openDate": "2025-01-01",
+      "planClose": "2026-07-31",
+      "factClose": null,
+      "planBudget": 1000000,
+      "factBudget": 2000000,
+      "goals": [
+        { "name": "цель 12", "planDate": null, "status": "просрочено" },
+        { "name": "цель 13", "planDate": null, "status": "просрочено" }
+      ]
+    }
+  ]
+}

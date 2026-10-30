@@ -1,0 +1,96 @@
+{
+  "project": "А1",
+  "currency": "RUB",
+  "planBudget": 1000000,
+  "factBudget": 750000,
+  "payments": [
+    {
+      "id": "pay-001",
+      "project": "А1",
+      "date": "2026-02-15",
+      "amount": 300000,
+      "currency": "RUB",
+      "purpose": "Оплата подрядчику за этап 1",
+      "status": "оплачен",
+      "contractor": "ООО «Пример»",
+      "comment": "Акт подписан"
+    },
+    {
+      "id": "pay-002",
+      "project": "А1",
+      "date": "2026-06-30",
+      "amount": 450000,
+      "currency": "RUB",
+      "purpose": "Оплата подрядчику за этап 2",
+      "status": "оплачен",
+      "contractor": "ООО «Пример»",
+      "comment": ""
+    },
+    {
+      "id": "pay-003",
+      "project": "А1",
+      "date": "2026-11-30",
+      "amount": 250000,
+      "currency": "RUB",
+      "purpose": "Финальный этап",
+      "status": "запланирован",
+      "contractor": "ООО «Пример»",
+      "comment": "Ожидает приёмки"
+    },
+    {
+      "id": "pay-004",
+      "project": "А4",
+      "date": "2026-03-20",
+      "amount": 600000,
+      "currency": "RUB",
+      "purpose": "Разработка модуля",
+      "status": "оплачен",
+      "contractor": "ИП Смирнов",
+      "comment": ""
+    },
+    {
+      "id": "pay-005",
+      "project": "А4",
+      "date": "2026-09-10",
+      "amount": 600000,
+      "currency": "RUB",
+      "purpose": "Доработка по замечаниям",
+      "status": "оплачен",
+      "contractor": "ИП Смирнов",
+      "comment": "Перерасход относительно плана"
+    },
+    {
+      "id": "pay-006",
+      "project": "Б2",
+      "date": "2026-05-12",
+      "amount": 1200000,
+      "currency": "RUB",
+      "purpose": "Закупка оборудования",
+      "status": "оплачен",
+      "contractor": "ООО «Техника»",
+      "comment": ""
+    },
+    {
+      "id": "pay-007",
+      "project": "Б2",
+      "date": "2026-08-01",
+      "amount": 900000,
+      "currency": "RUB",
+      "purpose": "Дополнительные работы",
+      "status": "отменён",
+      "contractor": "ООО «Техника»",
+      "comment": "Отменено, выбрали другого подрядчика"
+    },
+    {
+      "id": "pay-008",
+      "project": "Б2",
+      "date": "2026-09-15",
+      "amount": 800000,
+      "currency": "RUB",
+      "purpose": "Монтаж",
+      "status": "оплачен",
+      "contractor": "ООО «Монтаж-Сервис»",
+      "comment": ""
+    }
+  ]
+}

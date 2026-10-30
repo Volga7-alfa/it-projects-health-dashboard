@@ -1,0 +1,25 @@
+{
+  "weeklyDigest": {
+    "channel": "email",
+    "to": ["rukovoditel@example.com"],
+    "subject": "Дайджест портфеля ИТ-проектов — 02.11.2026",
+    "text": "Добрый день!\n\nКритические риски за неделю:\n\n🔴 А4 — перерасход 0,2 млн ₽ (план 1,0 млн, факт 1,2 млн)\n🔴 Б2 — просрочка закрытия 3 мес, 2 просроченные цели\n\nТребуют внимания:\n🟡 А2 — до закрытия меньше 3 месяцев, нет выполненных целей\n\nПодробнее: https://example.com/dashboard?direction=all\n\n— Дашборд «Здоровье ИТ-проектов»"
+  },
+  "redAlert": {
+    "channel": "telegram",
+    "payload": {
+      "chat_id": "-1001234567890",
+      "text": "🔴 Проект А4 перешёл в красную зону\n\nПричина: перерасход бюджета 0,2 млн ₽\nНаправление: А\nПлан: 1,0 млн ₽ · Факт: 1,2 млн ₽\n\nОткрыть: https://example.com/dashboard?project=А4",
+      "disable_notification": false
+    }
+  },
+  "healthSnapshot": {
+    "updatedAt": "2026-11-02T09:00:00.000Z",
+    "projects": {
+      "А1": { "status": "green", "updatedAt": "2026-11-02T09:00:00.000Z" },
+      "А2": { "status": "yellow", "updatedAt": "2026-11-02T09:00:00.000Z" },
+      "А4": { "status": "red", "updatedAt": "2026-11-02T09:00:00.000Z" },
+      "Б2": { "status": "red", "updatedAt": "2026-11-02T09:00:00.000Z" }
+    }
+  }
+}

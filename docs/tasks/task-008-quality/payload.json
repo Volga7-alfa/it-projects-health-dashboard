@@ -1,0 +1,78 @@
+{
+  "today": "2026-10-30",
+  "healthCases": [
+    {
+      "name": "просрочка закрытия → red",
+      "project": {
+        "status": "открыт",
+        "planClose": "2026-09-30",
+        "factClose": null,
+        "planBudget": 1000000,
+        "factBudget": 500000,
+        "goals": [{ "name": "цель 1", "planDate": "2026-12-31", "status": "в работе" }]
+      },
+      "expected": "red"
+    },
+    {
+      "name": "перерасход бюджета → red",
+      "project": {
+        "status": "открыт",
+        "planClose": "2026-12-31",
+        "factClose": null,
+        "planBudget": 1000000,
+        "factBudget": 1200000,
+        "goals": [{ "name": "цель 1", "planDate": "2026-12-31", "status": "в работе" }]
+      },
+      "expected": "red"
+    },
+    {
+      "name": "закрытый проект без перерасхода → closed",
+      "project": {
+        "status": "закрыт",
+        "planClose": "2026-09-30",
+        "factClose": "2026-09-30",
+        "planBudget": 1000000,
+        "factBudget": 1000000,
+        "goals": [{ "name": "цель 1", "planDate": "2026-09-30", "status": "выполнено" }]
+      },
+      "expected": "closed"
+    },
+    {
+      "name": "скоро закрытие, нет выполненных целей → yellow",
+      "project": {
+        "status": "открыт",
+        "planClose": "2026-12-15",
+        "factClose": null,
+        "planBudget": 1000000,
+        "factBudget": 1000000,
+        "goals": [{ "name": "цель 1", "planDate": "2026-12-15", "status": "в работе" }]
+      },
+      "expected": "yellow"
+    },
+    {
+      "name": "всё в порядке → green",
+      "project": {
+        "status": "открыт",
+        "planClose": "2027-06-30",
+        "factClose": null,
+        "planBudget": 1000000,
+        "factBudget": 500000,
+        "goals": [{ "name": "цель 1", "planDate": "2027-06-30", "status": "в работе" }]
+      },
+      "expected": "green"
+    }
+  ],
+  "overdueCases": [
+    { "planClose": "2026-09-30", "today": "2026-10-30", "expectedMonths": 1 },
+    { "planClose": "2026-10-30", "today": "2026-10-30", "expectedMonths": 0 },
+    { "planClose": "2026-12-31", "today": "2026-10-30", "expectedMonths": 0 },
+    { "planClose": null, "today": "2026-10-30", "expectedMonths": 0 }
+  ],
+  "errorCases": [
+    { "status": 401, "expected": "Ключ не подошёл" },
+    { "status": 402, "expected": "недостаточно средств" },
+    { "status": 429, "expected": "Слишком много запросов" },
+    { "status": 500, "expected": "временно недоступен" },
+    { "status": "network", "expected": "Нет соединения" }
+  ]
+}

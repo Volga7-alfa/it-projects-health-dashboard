@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Здоровье ИТ-проектов — дашборд</title>
+  <!-- SheetJS для чтения Excel в браузере -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- Стили дашборда -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <div class="header">
+      <h1><span class="heart">❤&#xFE0E;</span> Здоровье ИТ-проектов</h1>
+      <div class="header-right">
+        <div class="filters">
+          <div class="filter-group">
+            <label for="filter-direction">Направление</label>
+            <select id="filter-direction"><option value="all">Все</option></select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-project">Проект</label>
+            <select id="filter-project"><option value="all">Все</option></select>
+          </div>
+        </div>
+        <button class="icon-btn" id="open-settings" title="Настройки и DeepSeek">⚙️</button>
+      </div>
+    </div>
+
+    <div id="directions-container" class="directions-grid"></div>
+    <div id="projects-container" class="projects-grid"></div>
+
+    <div class="goals-portlet" id="goals-portlet">
+      <div class="portlet-header">
+        <h2>🎯 Все цели</h2>
+        <div class="table-filters">
+          <select id="goal-filter-direction"><option value="all">Направление: все</option></select>
+          <select id="goal-filter-project"><option value="all">Проект: все</option></select>
+          <select id="goal-filter-project-status"><option value="all">Статус проекта: все</option></select>
+          <select id="goal-filter-goal"><option value="all">Цель: все</option></select>
+          <select id="goal-filter-status"><option value="all">Статус цели: все</option></select>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table id="goals-table">
+          <thead>
+            <tr>
+              <th>Направление</th><th>Проект</th><th>Статус проекта</th>
+              <th>Цель</th><th>Статус достижения</th><th>Плановая дата</th><th>Просрочка</th>
+            </tr>
+          </thead>
+          <tbody id="goals-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================== MODAL ================== -->
+  <div class="modal-backdrop" id="settings-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Настройки · DeepSeek</h2>
+        <button class="modal-close" id="close-settings">✕</button>
+      </div>
+
+      <!-- API key -->
+      <div class="field">
+        <label for="api-key">API-ключ DeepSeek</label>
+        <input type="password" id="api-key" placeholder="sk-..." autocomplete="off">
+        <small>Хранится только в этом браузере (localStorage). Никуда, кроме api.deepseek.com, не отправляется.</small>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-primary" id="save-key">💾 Сохранить ключ</button>
+        <button class="btn btn-secondary" id="clear-key">🗑 Удалить ключ</button>
+        <button class="btn btn-secondary" id="test-key">🔌 Проверить</button>
+      </div>
+
+      <div class="status-line" id="key-status"></div>
+
+      <hr style="border:none; border-top:0.5px solid var(--card-border); margin:4px 0;">
+
+      <!-- Excel upload -->
+      <div class="field">
+        <label>Загрузить новый Excel</label>
+        <div class="file-drop" id="file-drop">
+          <p>📎 Перетащите файл сюда или <strong>нажмите, чтобы выбрать</strong></p>
+          <p style="font-size:12px; margin-top:4px;">.xlsx / .xls — DeepSeek прочитает и обновит дашборд</p>
+        </div>
+        <input type="file" id="file-input" accept=".xlsx,.xls" style="display:none;">
+      </div>
+
+      <div class="status-line" id="excel-status"></div>
+
+      <hr style="border:none; border-top:0.5px solid var(--card-border); margin:4px 0;">
+
+      <!-- Chat -->
+      <div class="field">
+        <label>Спросить DeepSeek по текущим данным</label>
+        <textarea id="chat-input" rows="2" placeholder="Например: какие проекты в зоне риска и почему?"></textarea>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-primary" id="ask-deepseek">✨ Спросить</button>
+        <button class="btn btn-secondary" id="clear-chat">Очистить</button>
+      </div>
+      <div class="chat-log" id="chat-log"></div>
+    </div>
+  </div>
+
+  <!-- Данные и логика -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

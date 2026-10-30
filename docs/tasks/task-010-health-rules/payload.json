@@ -1,0 +1,55 @@
+{
+  "standard": {
+    "overdueMonthsRed": 1,
+    "budgetOverrunPercentRed": 0,
+    "monthsToCloseYellow": 3,
+    "minGoalProgressYellow": 0,
+    "goalOverdueCountYellow": 0,
+    "closedWithOverrunRed": true
+  },
+  "strict": {
+    "overdueMonthsRed": 0,
+    "budgetOverrunPercentRed": 0,
+    "monthsToCloseYellow": 6,
+    "minGoalProgressYellow": 50,
+    "goalOverdueCountYellow": 1,
+    "closedWithOverrunRed": true
+  },
+  "soft": {
+    "overdueMonthsRed": 2,
+    "budgetOverrunPercentRed": 10,
+    "monthsToCloseYellow": 3,
+    "minGoalProgressYellow": 25,
+    "goalOverdueCountYellow": 2,
+    "closedWithOverrunRed": false
+  },
+  "examples": [
+    {
+      "project": "А1",
+      "planClose": "2026-12-31",
+      "planBudget": 1000000,
+      "factBudget": 500000,
+      "goalsDone": 2,
+      "goalsTotal": 3,
+      "expectedStandard": "green"
+    },
+    {
+      "project": "А4",
+      "planClose": "2026-12-31",
+      "planBudget": 1000000,
+      "factBudget": 1200000,
+      "goalsDone": 0,
+      "goalsTotal": 2,
+      "expectedStandard": "red"
+    },
+    {
+      "project": "Б2",
+      "planClose": "2026-07-31",
+      "planBudget": 1000000,
+      "factBudget": 2000000,
+      "goalsDone": 0,
+      "goalsTotal": 2,
+      "expectedStandard": "red"
+    }
+  ]
+}
